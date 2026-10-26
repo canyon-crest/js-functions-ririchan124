@@ -19,9 +19,8 @@
 
 function greet(name) {
   // Write your code here
-
+  return "Hello, " + name + "!";
 }
-
 
 // --- myFunc() — Persistent Counter ---
 // This function counts how many times it has been called.
@@ -37,10 +36,14 @@ function greet(name) {
 
 
 
+let count = 0;
+
 function myFunc() {
   // Write your code here
-
+  count = count + 1;
+  return count;
 }
+
 
 
 // --- getRandomNum(max) ---
@@ -57,7 +60,11 @@ function myFunc() {
 
 function getRandomNum(max) {
   // Write your code here
-
+  if (isNaN(max) || max < 1) {
+    return 0;
+  }
+  let randomNum = Math.floor(Math.random() * max) + 1;
+  return randomNum;
 }
 
 
@@ -67,12 +74,10 @@ function getRandomNum(max) {
 // STEP 1: Return x + y.
 //         Make sure both x and y are numbers, not strings!
 //         The click handler already converts them for you.
-
 function myAdder(x, y) {
   // Write your code here
-
+  return x + y;
 }
-
 
 // --- distance(x1, y1, x2, y2) ---
 // This function calculates the Euclidean distance between
@@ -88,9 +93,11 @@ function myAdder(x, y) {
 
 function distance(x1, y1, x2, y2) {
   // Write your code here
-
+  let xSquare = Math.pow(x2 - x1, 2);
+  let ySquare = Math.pow(y2 - y1, 2);
+  let sum = xSquare + ySquare;
+  return Math.sqrt(sum).toFixed(2);
 }
-
 
 // --- tipCalc(bill, tipPercent) ---
 // This function calculates a tip and returns the total.
@@ -103,10 +110,10 @@ function distance(x1, y1, x2, y2) {
 
 function tipCalc(bill, tipPercent) {
   // Write your code here
-
+  let tip = bill * (tipPercent / 100);
+  let total = bill + tip;
+  return total.toFixed(2);
 }
-
-
 // ============================================
 //  CLICK HANDLERS (pre-written — do not modify)
 // ============================================
